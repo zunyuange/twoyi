@@ -1,0 +1,22 @@
+姓名：名称： 锈病
+
+on:
+  push:
+    branches: [    分支：[“主要”]"main" ]
+  pull_request:
+    branches: [    分支：[“主要”]"main" ]
+
+env:
+  CARGO_TERM_COLOR:   CARGO_TERM_COLOR：始终
+
+jobs:
+  build:
+
+    runs-on:     运行于：ubuntu-latest
+
+    steps:
+    - uses:     - 使用：actions/checkout@v4
+    - name:     - 名称：构建
+      run:       运行：cargo build--verbose
+    - name:     - 名称：运行测试
+      run:       运行：cargo test--verbose
